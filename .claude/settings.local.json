@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(Get-ChildItem \"D:\\\\Modelo\\\\mod-minecraft\" -Recurse)",
+      "Bash(Select-Object FullName, Extension)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(./gradlew --no-configuration-cache downloadAssets)",
+      "Bash(./gradlew --no-configuration-cache processResources)",
+      "Bash(./gradlew --no-configuration-cache compileJava processResources)",
+      "Bash(dir \"D:\\\\MC-creator\" /b)",
+      "Bash(find ~/.gradle/caches/modules-2/files-2.1/software.bernie.geckolib -name \"*.jar\" 2>/dev/null | head -20)",
+      "Bash(mkdir -p \"D:/MC-creator/libs\" && cp \"/c/Users/rojas/.gradle/caches/modules-2/files-2.1/software.bernie.geckolib/geckolib-neoforge-1.21.1/4.7.6/e1a29a8b0bafa8bf0cf3c44149cc5e0636f33d6/geckolib-neoforge-1.21.1-4.7.6.jar\" \"D:/MC-creator/libs/\" && ls \"D:/MC-creator/libs/\")"
+    ]
+  }
+}

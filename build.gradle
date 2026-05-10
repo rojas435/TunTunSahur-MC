@@ -8,6 +8,10 @@ repositories {
         name = "GeckoLib"
         url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
     }
+    flatDir {
+        name = "LocalLibs"
+        dirs 'libs'
+    }
 }
 
 version = '1.0'
@@ -48,6 +52,8 @@ neoForge {
 
 dependencies {
     implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:4.7.6"
+    // Fallback: use bundled jar if cloudsmith.io is unreachable (e.g. restricted networks)
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 // Directorio generado separado para que MCreator no lo borre
