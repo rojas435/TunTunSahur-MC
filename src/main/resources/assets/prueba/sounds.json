@@ -1,0 +1,6 @@
+{
+  "sahur_ambient": { "sounds": ["prueba:dead"] },
+  "sahur_hurt": { "sounds": ["prueba:persecution"] },
+  "sahur_death": { "sounds": ["prueba:dead"] },
+  "sahur_see_player": { "sounds": ["prueba:tungtung_dweller"] }
+}

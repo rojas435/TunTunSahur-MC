@@ -1,0 +1,18 @@
+# Gradle build output
+build/
+.gradle/
+
+# Minecraft run directory (saves, logs, configs de dev)
+run/
+
+# MCreator internal
+.mcreator/
+
+# IDE
+.eclipse/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
