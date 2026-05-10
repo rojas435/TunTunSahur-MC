@@ -50,6 +50,32 @@ dependencies {
     implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:4.7.6"
 }
 
+// Directorio generado separado para que MCreator no lo borre
+def generatedResources = file("${buildDir}/generated/resources/main")
+
+sourceSets.main.resources.srcDir generatedResources
+
+tasks.register('generateModResources') {
+    def soundsJson = new File(generatedResources, 'assets/prueba/sounds.json')
+    outputs.file(soundsJson)
+    doLast {
+        soundsJson.parentFile.mkdirs()
+        soundsJson.setText('''\
+{
+  "sahur_ambient": { "sounds": ["prueba:dead"] },
+  "sahur_hurt": { "sounds": ["prueba:persecution"] },
+  "sahur_death": { "sounds": ["prueba:dead"] },
+  "sahur_see_player": { "sounds": ["prueba:tungtung_dweller"] }
+}''', 'UTF-8')
+        println ">> sounds.json generado en ${soundsJson}"
+    }
+}
+
+tasks.named('processResources') {
+    dependsOn('generateModResources')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
